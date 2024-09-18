@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="light-mode">
+    <div class="toggle-container">
+        <button id="toggleButton">Toggle Dark Mode</button>
+    </div>
+
+    <div class="form-container">
+        <h2>Fill in Your Information</h2>
+        <form id="resumeForm">
+            <h3>Personal Information</h3>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" required>
+            <label for="location">Location:</label>
+            <input type="text" id="location" required>
+
+            <h3>Education</h3>
+            <label for="education1">Education 1:</label>
+            <input type="text" id="education1" required>
+            <label for="eduDate1">Education Date 1:</label>
+            <input type="text" id="eduDate1" required>
+            <label for="education2">Education 2:</label>
+            <input type="text" id="education2">
+            <label for="eduDate2">Education Date 2:</label>
+            <input type="text" id="eduDate2">
+
+            <h3>Work Experience</h3>
+            <label for="job1">Job 1:</label>
+            <input type="text" id="job1" required>
+            <label for="jobDate1">Job Date 1:</label>
+            <input type="text" id="jobDate1" required>
+            <label for="jobDescription1">Job Description 1:</label>
+            <textarea id="jobDescription1" required></textarea>
+
+            <h3>Skills</h3>
+            <label for="skills">Skills:</label>
+            <input type="text" id="skills" placeholder="Separate skills with commas" required>
+
+            <button type="submit">Generate Resume</button>
+        </form>
+    </div>
+
+    <div class="scroll-container">
+        <div class="sidebar" id="sidebar">
+            <div class="profile-section">
+                <div class="profile-picture">
+                    <img src="./mna.png" alt="Profile Picture">
+                </div>
+                <h2 class="name" id="displayName" contenteditable="true">Your Name</h2>
+                <h5 class="designation" contenteditable="true">Fullstack Web Developer</h5>
+            </div>
+
+            <div class="details">
+                <h3>Details</h3>
+                <p><i class="fas fa-map-marker-alt"></i> <a id="displayLocation" class="ui" contenteditable="true"></a></p>
+                <p><i class="fas fa-phone-alt"></i> <a id="displayPhone" class="ui" contenteditable="true"></a></p>
+                <p><i class="fas fa-envelope"></i> <a id="displayEmail" class="ui" contenteditable="true"></a></p>
+            </div>
+
+            <div class="skills">
+                <h3>Skills</h3>
+                <ul id="displaySkills">
+                    <!-- Dynamically populated -->
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <section class="education">
+                <h2>Education</h2>
+                <p class="ab" id="displayEdu1" contenteditable="true"></p>
+                <p class="a" id="displayEduDate1" contenteditable="true"></p>
+                <p class="ab" id="displayEdu2" contenteditable="true"></p>
+                <p class="a" id="displayEduDate2" contenteditable="true"></p>
+            </section>
+
+            <section class="internships">
+                <h2>Work Experience</h2>
+                <p class="ab" id="displayJob1" contenteditable="true"></p>
+                <p class="a" id="displayJobDate1" contenteditable="true"></p>
+                <p id="displayJobDescription1" contenteditable="true"></p>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
